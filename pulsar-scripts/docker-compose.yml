@@ -1,0 +1,30 @@
+                                       
+version: '3'
+services:
+  consumer0:
+    image: apachepulsar/pulsar:2.7.0
+    volumes:
+      - ./consumer.py:/consumer.py  # Mount the test.py script into the container
+    environment:
+      - N_CONSUMERS=${N_CONSUMERS}
+    command: bash -c "pip install pandas pymongo && python3 /consumer.py -m 0"
+    network_mode: "host"
+    
+  consumer1:
+    image: apachepulsar/pulsar:2.7.0
+    volumes:
+      - ./consumer.py:/consumer.py  # Mount the test.py script into the container
+    environment:
+      - N_CONSUMERS=${N_CONSUMERS}
+    command: bash -c "pip install pandas pymongo && python3 /consumer.py -m 1"
+    network_mode: "host"
+    
+  consumer2:
+    image: apachepulsar/pulsar:2.7.0
+    volumes:
+      - ./consumer.py:/consumer.py  # Mount the test.py script into the container
+    environment:
+      - N_CONSUMERS=${N_CONSUMERS}
+    command: bash -c "pip install pandas pymongo && python3 /consumer.py -m 2"
+    network_mode: "host"
+    
