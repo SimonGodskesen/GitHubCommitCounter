@@ -14,6 +14,9 @@ Filenames - Used to determine whether it uses a test-driven dev approach
 
 Workflows - Used to determin whether it uses DevOps
 
+## Result
+See pulsar_scripts/output for resulting plots.
+
 ## How to start the project
 In a new VM, run: setup.sh
 
